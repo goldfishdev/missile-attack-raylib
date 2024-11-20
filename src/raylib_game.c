@@ -27,12 +27,13 @@ GameScreen currentScreen = LOGO;
 Font font = { 0 };
 Music music = { 0 };
 Sound fxCoin = { 0 };
+Texture2D playerTexture = { 0 };
 
 //----------------------------------------------------------------------------------
 // Local Variables Definition (local to this module)
 //----------------------------------------------------------------------------------
-static const int screenWidth = 800;
-static const int screenHeight = 450;
+static const int screenWidth = 640;
+static const int screenHeight = 480;
 
 // Required variables to manage screen transitions (fade-in, fade-out)
 static float transAlpha = 0.0f;
@@ -67,12 +68,11 @@ int main(void)
     font = LoadFont("resources/mecha.png");
     //music = LoadMusicStream("resources/ambient.ogg"); // TODO: Load music
     fxCoin = LoadSound("resources/coin.wav");
-
     SetMusicVolume(music, 1.0f);
     PlayMusicStream(music);
-
+    playerTexture = LoadTexture("src/resources/sprites/pixil-frame-0.png");
     // Setup and init first screen
-    currentScreen = LOGO;
+    currentScreen = GAMEPLAY;
     InitLogoScreen();
 
 #if defined(PLATFORM_WEB)
@@ -275,7 +275,7 @@ static void UpdateDrawFrame(void)
     //----------------------------------------------------------------------------------
     BeginDrawing();
 
-        ClearBackground(RAYWHITE);
+        ClearBackground(BLACK);
 
         switch(currentScreen)
         {
