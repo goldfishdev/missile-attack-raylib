@@ -30,7 +30,11 @@
 // Types and Structures Definition
 //----------------------------------------------------------------------------------
 typedef enum GameScreen { UNKNOWN = -1, LOGO = 0, TITLE, OPTIONS, GAMEPLAY, ENDING } GameScreen;
-
+typedef struct Bomb {
+    Vector2 position;
+    float speed;
+    bool active;
+} Bomb;
 //----------------------------------------------------------------------------------
 // Global Variables Declaration (shared by several modules)
 //----------------------------------------------------------------------------------
@@ -39,6 +43,8 @@ extern Font font;
 extern Music music;
 extern Sound fxCoin;
 extern Texture2D playerTexture;
+extern Texture2D playerTexture;
+extern Texture2D bombTexture;
 
 #ifdef __cplusplus
 extern "C" {            // Prevents name mangling of functions

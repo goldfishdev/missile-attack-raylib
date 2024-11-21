@@ -28,6 +28,7 @@ Font font = { 0 };
 Music music = { 0 };
 Sound fxCoin = { 0 };
 Texture2D playerTexture = { 0 };
+Texture2D bombTexture = { 0 };
 
 //----------------------------------------------------------------------------------
 // Local Variables Definition (local to this module)
@@ -70,7 +71,8 @@ int main(void)
     fxCoin = LoadSound("resources/coin.wav");
     SetMusicVolume(music, 1.0f);
     PlayMusicStream(music);
-    playerTexture = LoadTexture("src/resources/sprites/pixil-frame-0.png");
+    playerTexture = LoadTexture("src/resources/sprites/plane.png");
+    bombTexture = LoadTexture("src/resources/sprites/bomb.png");
     // Setup and init first screen
     currentScreen = GAMEPLAY;
     InitLogoScreen();
