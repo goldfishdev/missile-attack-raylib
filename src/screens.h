@@ -34,7 +34,14 @@ typedef struct Bomb {
     Vector2 position;
     float speed;
     bool active;
+    Rectangle rect;
 } Bomb;
+
+typedef struct Timer {
+    double startTime;   // Start time (seconds)
+    double lifeTime;    // Lifetime (seconds)
+} Timer;
+
 //----------------------------------------------------------------------------------
 // Global Variables Declaration (shared by several modules)
 //----------------------------------------------------------------------------------
